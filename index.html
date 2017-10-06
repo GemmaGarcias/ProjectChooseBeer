@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <div>
+        <div class="page-header">
+            <div class="headerChoose container">
+                <h1>CHOOSE BEER <small>Choose future</small></h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            <div class="col-md-7 container-fluid">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1>Find your beer</h1>
+                        <form id="search">
+                            <input class="input-lg" type="" name="query">
+                            <button class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+                    </div>
+                </div>
+                    <div id='beernames' class="jumbotron">
+                        <h1>But, which one</h1>
+                        <select class='input-lg'></select>
+                    </div>
+                </div>
+            <div id="trainspot" class="col-md-3 container-fluid hidden">
+              <div class="row">
+                <div class="thumbnail">
+                  <img class=logoImage src="" alt="">
+                  <div class="infoBeer caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> 
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- SERVICES -->
+    <script src="js/service/serviceBeer.js" type= "text/javascript"></script>
+
+    <!-- MAIN -->
+    <script src="js/searchBrand.js" type= "text/javascript"></script>
+
+    
+</body>
+
+</html>

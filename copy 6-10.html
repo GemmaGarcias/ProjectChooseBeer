@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <div>
+        <div class="page-header">
+            <div class="headerChoose container">
+                <h1>CHOOSE BEER <small>Choose future</small></h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            <div class="col-md-7 container-fluid">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1>Find your beer</h1>
+                        <form id="search">
+                            <input class="input-lg" type="" name="query">
+                            <button class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+                    </div>
+                </div>
+                    <div id='beernames' class="jumbotron">
+                        <h1>But, which one</h1>
+                        <select class='input-lg'></select>
+                    </div>
+                </div>
+            <div id="trainspot" class="col-md-3 container-fluid hidden">
+              <div class="row">
+                <div class="thumbnail">
+                  <img class=logoImage src="" alt="">
+                  <div class="infoBeer caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> 
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+        $('#search').on('submit', function(e) {
+            e.preventDefault()
+            var query = $(this).find('input').val()
+
+            $.ajax({
+                    url: "https://quiet-inlet-67115.herokuapp.com/api/search/all?q=" + query,
+                })
+
+                .then(function(oData) {
+                    console.log(oData)
+                    var contentbeerNames = '<option disabled selected>Select...</option>'
+                    console.log(oData)      
+
+                    oData.forEach(function(oBeerNames) {
+                        contentbeerNames += '<option value=' + oBeerNames.id +'>'
+                        contentbeerNames += oBeerNames.name
+                        contentbeerNames += '</option>'
+                    })
+                    $('#beernames select').html(contentbeerNames)
+                    $('#trainspot').addClass('hidden')
+
+                })
+        })
+        $('#beernames select').on('change', function() {
+            var choosenBeer = $(this).val()
+
+            console.log(choosenBeer)
+
+
+            $.ajax({
+                    url: 'https://quiet-inlet-67115.herokuapp.com/api/beer/' + choosenBeer
+                })
+                .then(function(oData) {
+                    console.log(oData)
+                    var nameBeer= oData.name
+                    var descriptionBeer=oData.style.description
+                    var imgDefault= 'img/beer.jpg'
+                    var finalImage=oData.labels && oData.labels.medium ||imgDefault
+                   console.log(finalImage)
+
+                    $('.infoBeer h3').text(nameBeer)
+                    $('.infoBeer p').text(descriptionBeer)
+                    $('#trainspot').removeClass('hidden')
+                    $('#trainspot .logoImage').attr('src', finalImage)
+                
+                })
+            })
+
+    </script>
+</body>
+
+</html>

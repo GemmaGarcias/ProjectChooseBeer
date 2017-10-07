@@ -1,2 +1,59 @@
-.container{
-	colo:green
+
+$transp:transparents;
+
+#backToBlack{
+	background-color:black;
+	border-bottom: 40px solid black;
+
+}
+h1#mainTitle{
+	color:white;
+}
+
+h1 small{
+	 	color:#ffd900;
+
+	 }
+#mainTitle{
+	 	font-size: 50px;
+	 }
+h1.survey{
+	font-size:20px;
+	color:#f9f9f9;
+}
+.marginSel{
+	margin-bottom: 40px;
+}
+
+.page-header{
+	border-top:#ffd900 solid 30px;
+	margin-top:0;
+}
+
+
+div#photoChoose{
+	position: right;
+	padding-left: 100px;
+	border-left:solid 1px #f9f9f9;
+	img{
+		margin:20px;
+	}
+}
+
+.button-search{
+	background-color: white;
+	border: solid 2px #ffd900;
+	&:hover{
+		background-color:#ffd900;
+		border:solid 2px black;
+	}
+}
+
+div.bigger:hover{
+	width: 800px;
+	height:auto;
+	position:relative; 
+	top:40px;
+
+}
+

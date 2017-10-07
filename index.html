@@ -10,37 +10,40 @@
 </head>
 
 <body>
-    <div>
-        <div class="page-header">
+    <div id="backToBlack">
+        <div class="head page-header">
             <div class="headerChoose container">
-                <h1>CHOOSE BEER <small>Choose future</small></h1>
+                <h1 id="mainTitle">CHOOSE BEER <small>Choose future</small></h1>
             </div>
         </div>
-        <div class="container">
+        <div id="imgBack" class="container">
             <div class="row">
-            <div class="col-md-7 container-fluid">
-                <div class="jumbotron">
+            <div class="finder col-md-5 container-fluid">
+                <div class="findPremise">
                     <div class="container">
-                        <h1>Find your beer</h1>
+                        <h1 class="survey">Find your beer</h1>
                         <form id="search">
                             <input class="input-lg" type="" name="query">
-                            <button class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+                            <button class="button-search btn btn-lg"><span class="glyphicon glyphicon-search"></span></button>
                         </form>
                     </div>
                 </div>
-                    <div id='beernames' class="jumbotron">
-                        <h1>But, which one</h1>
-                        <select class='input-lg'></select>
+                    <div id="beernames" class="container">
+                        <h1 class="survey">But, which one</h1>
+                        <select class='marginSel input-lg'></select>
                     </div>
                 </div>
-            <div id="trainspot" class="col-md-3 container-fluid hidden">
+            <div class="photoChoose col-md-7 container-fluid">
+                <img src="img/choose.png" alt="">
+            </div>
+
+            <div id="trainspot" class="col-md-7 container-fluid hidden">
               <div class="row">
-                <div class="thumbnail">
-                  <img class=logoImage src="" alt="">
+                <div class="bigger thumbnail">
+                  <img class="logoImage" src="" alt="">
                   <div class="infoBeer caption">
                     <h3>Thumbnail label</h3>
                     <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                   </div>
                 </div>
               </div>

@@ -16,6 +16,7 @@
                 })
                 $('#beernames select').html(contentbeerNames)
                 $('#trainspot').addClass('hidden')
+                $('.photoChoose').removeClass('hidden')
 
             })
     })
@@ -37,6 +38,7 @@
                 $('.infoBeer p').text(descriptionBeer)
                 $('#trainspot').removeClass('hidden')
                 $('#trainspot .logoImage').attr('src', finalImage)
+                $('.photoChoose').addClass('hidden')
 
             })
     })
